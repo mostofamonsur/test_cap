@@ -1,0 +1,25 @@
+global: &global
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  pool: 200
+  username: root
+  password: socmed09
+  # socket: <%=ENV['SOCKET_PATH'] || "/tmp/mysql.sock"%>
+  reconnect: true
+
+development:
+  database: <%=ENV['DEVELOPMENT_DATABASE'] || 'test_cap_development'%>
+  <<: *global
+
+production:
+  password: KoVeRED_360
+  username: root
+  host: ec2-52-7-193-12.compute-1.amazonaws.com`
+  database: <%=ENV['DEVELOPMENT_DATABASE'] || 'test_cap_production'%>
+
+
+test: &test
+  database: test_cap_test
+  <<: *global
+
