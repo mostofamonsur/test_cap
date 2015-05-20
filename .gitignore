@@ -16,3 +16,6 @@
 !/log/.keep
 /tmp
 config/database.yml
+Capfile
+config/deploy.rb
+config/deploy/
